@@ -1,0 +1,220 @@
+/* Estilos generales para el chatbot */
+.chatbot-container {
+    padding: 50px 100px;
+    background: linear-gradient(30deg, #263cffbb, #ffad7e) !important;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;  /* Elimina la barra de desplazamiento lateral */
+    margin-top: -1%;
+}
+
+/* Contenedor de la caja de chat */
+.chatbox {
+    background-color: #1c1c1c;
+    border-radius: 20px;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    overflow-y: auto;  /* Solo barra de desplazamiento vertical */
+    box-shadow: 0 4px 30px rgba(255, 186, 95, 0.733);
+    border: 1px solid #333;
+    position: relative;
+}
+
+/* Historia de chat */
+.chat-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 186, 95, 0.733);
+    word-wrap: break-word; /* Evita el desbordamiento del texto */
+    overflow-x: hidden; /* Elimina cualquier barra horizontal */
+}
+
+/* Estilo de los mensajes */
+.message {
+    display: flex;
+    margin: 15px 0;
+    animation: slideIn 0.5s ease-out;
+    position: relative;
+}
+
+/* Mensajes del usuario (burbujas) */
+.user-message .message-content {
+    background-color: #f5f795;
+    color: #111;
+    padding: 12px 18px;
+    border-radius: 4px;
+    max-width: 75%;
+    margin-left: auto;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    word-wrap: break-word; /* Evita el desbordamiento del texto */
+    font-family: Arial, sans-serif; /* Estilo de letra anterior */
+}
+
+/* Pestaña de los mensajes del usuario (derecha) */
+.user-message .message-content::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 5px; /* Ajusté para que esté más hacia el borde */
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #f5f795;
+}
+
+/* Mensajes de la IA (burbujas) */
+.ia-message .message-content {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 4px;
+    max-width: 75%;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    word-wrap: break-word; /* Evita el desbordamiento del texto */
+    font-family: Arial, sans-serif; /* Estilo de letra anterior */
+}
+
+/* Pestaña de los mensajes de la IA (izquierda) */
+.ia-message .message-content::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 5px; /* Ajusté para que esté más hacia el borde */
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #f5f795;
+}
+
+/* Indicador de IA escribiendo */
+.ia-message.typing .message-content {
+    position: relative;
+    padding-right: 40px;
+    text-align: left;
+}
+
+/* Puntitos mientras la IA responde */
+.ia-message.typing::after {
+    content: "•••";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #ffad7e;
+    animation: typing 1s infinite;
+}
+
+/* Animación de los puntitos */
+@keyframes typing {
+    0% { content: "•"; }
+    33% { content: "••"; }
+    66% { content: "•••"; }
+    100% { content: "•"; }
+}
+
+/* Estilo de la barra de desplazamiento vertical */
+.chat-history::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-history::-webkit-scrollbar-thumb {
+    background-color: #ffad7e;
+    border-radius: 10px;
+}
+
+.chat-history::-webkit-scrollbar-track {
+    background-color: #333;
+    border-radius: 10px;
+}
+
+/* Input de chat */
+.chat-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+/* Input de texto */
+.chat-input input {
+    width: 85%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #333;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Input con enfoque */
+.chat-input input:focus {
+    outline: none;
+    border: 2px solid #ffad7e;
+    box-shadow: 0 0 8px rgba(255, 186, 95, 0.733);
+}
+
+/* Botón de enviar */
+.chat-input button {
+    background-color: #ffad7e;
+    color: #111;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+/* Hover en botón */
+.chat-input button:hover {
+    background-color: #ffad7e;
+    transform: scale(1.1);
+}
+
+
+/* Animación de deslizamiento */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* Estilo para las respuestas de la IA */
+.ia-message .message-content {
+    background-color: #f5f795; /* Fondo amarillo claro */
+    padding: 10px;
+    border-radius: 5px;
+    color: #333; /* Color de texto */
+    font-size: 16px;
+}
+
+/* Estilo para el texto amarillo */
+.ia-message .message-content span {
+    color: yellow; /* Cambia el color del texto a amarillo */
+}

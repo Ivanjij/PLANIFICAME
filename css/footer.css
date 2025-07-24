@@ -1,0 +1,82 @@
+/* Estilos generales para el footer */
+.footer {
+    background-color: #222; /* Coincide con el fondo del navbar */
+    color: #fff; /* Texto blanco */
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Contenedor del footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    flex-wrap: wrap; /* Asegura que los elementos no se desborden */
+}
+
+/* Estilos para el logo */
+.footer-logo-img {
+    max-width: 150px;
+}
+
+/* Estilos para los enlaces */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* Espaciado entre los enlaces */
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #ffad7e; /* Color verde en hover */
+}
+
+/* Estilos para los iconos sociales */
+.footer-socials {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #ffad7e; /* Verde en hover */
+}
+
+/* Estilos para la parte inferior del footer */
+.footer-bottom {
+    background-color: #ffad7e;
+    padding: 10px 0;
+    font-size: 12px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #000000;
+}
+
+.footer-bottom p a {
+    color: #ffad7e;
+    text-decoration: none;
+    font-weight: bold;
+}

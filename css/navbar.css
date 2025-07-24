@@ -1,0 +1,331 @@
+/* Navbar general */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1d1d1d;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    position: relative;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffad7e;
+    letter-spacing: 1.5px;
+    margin-left: 3%; /* Agregado para moverlo hacia la derecha */
+}
+
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #ffad7e;
+    margin-right: 10px;
+}
+
+/* Centrado de enlaces */
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Usuario ligeramente a la izquierda */
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-right: 0px;
+}
+
+/* Enlaces principales */
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+}
+
+/* Separador visual */
+.separator {
+    color: #ffad7e;
+    font-weight: bold;
+}
+
+/* Estilo general para enlaces */
+.nav-links a,
+.nav-user a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 10px;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.nav-links li:nth-child(1) a {
+    animation-delay: 0.1s;
+}
+
+.nav-links li:nth-child(3) a {
+    animation-delay: 0.2s;
+}
+
+.nav-links li:nth-child(5) a {
+    animation-delay: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-user a:hover {
+    color: #ffad7e;
+}
+
+/* Línea animada debajo del texto */
+.nav-links a::after,
+.nav-user a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffb85ac2;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-user a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Usuario */
+.user-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-menu i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Dropdown */
+.nav-user {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    list-style: none;
+    padding: 10px 0;
+    width: 145px; /* Reducción del ancho */
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Estilo de los elementos del dropdown */
+.dropdown li {
+    margin: 0;
+}
+
+/* Enlaces dentro del dropdown */
+.dropdown li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-size: 16px; /* Tamaño de fuente reducido */
+}
+
+/* Efecto al pasar el ratón sobre un elemento */
+.dropdown li a:hover {
+    background-color: #444;
+    color: #ffad7e; /* Cambia el color del texto al pasar el ratón */
+}
+
+/* Mostrar el dropdown con animación */
+.user-menu:hover .dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte cuando está visible */
+}
+
+
+/* Línea inferior */
+.navbar-bottom-line {
+    width: 100%;
+    height: 2px;
+    background-color: #ffad7e;
+    margin-top: 20px;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sidebar lateral */
+#user-sidebar {
+    position: fixed;
+    top: 0px;
+    left: 0; /* CAMBIA de right: 0 a left: 0 */
+    right: auto; /* Asegúrate de quitar cualquier valor de right */
+    width: 60px;
+    /* Colapsado por defecto */
+    height: 100%;
+    background-color: #1d1d1d;
+    color: white;
+    padding-top: 10px;
+    transition: width 0.3s ease;
+    z-index: 1000;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+}
+
+/* Sidebar expandido al pasar el cursor */
+#user-sidebar:hover {
+    width: 250px;
+}
+
+/* Botón hamburguesa */
+#sidebar-toggle {
+    font-size: 22px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Flecha decorativa */
+.sidebar-arrow {
+    position: absolute;
+    left: auto; /* quitar left anterior */
+    right: -20px; /* Mover la flecha al otro lado */
+    top: 70px;
+    width: 20px;
+    height: 40px;
+    background-color: #1f1f2e;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Sombra hacia la izquierda ahora */
+}
+
+.sidebar-arrow i {
+    color: white;
+    font-size: 14px;
+}
+
+/* Lista lateral */
+#user-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 45px;
+}
+
+#user-sidebar ul li {
+    margin: 20px 0;
+}
+
+/* Enlace sidebar */
+#user-sidebar ul li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Delay animación */
+#user-sidebar ul li:nth-child(1) a {
+    animation-delay: 0.2s;
+}
+
+#user-sidebar ul li:nth-child(2) a {
+    animation-delay: 0.3s;
+}
+
+/* Línea animada solo en texto */
+.link-text {
+    position: relative;
+    display: none;
+    /* Oculto por defecto */
+}
+
+.link-text::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffad7e;
+    bottom: -10px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.link-text:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Iconos */
+#user-sidebar ul li a i {
+    color: #ffad7e;
+    font-size: 20px;
+}
+
+/* Mostrar el texto solo cuando el sidebar está expandido */
+#user-sidebar:hover .link-text {
+    display: inline;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

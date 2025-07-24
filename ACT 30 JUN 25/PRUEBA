@@ -1,0 +1,147 @@
+<?php
+require_once '../../../includes/navbar.php'; // Subir dos niveles para llegar a la carpeta 'includes'
+
+$courseFile = basename(__FILE__, '.php'); // Obtener el nombre del archivo actual (sin extensión)
+$courseType = '';  // Variable para el tipo de curso (principiante, intermedio)
+
+// Construir la ruta correcta para el curso dentro de `views/courses/`
+$coursePath = "../../views/courses/principiante/$courseFile.php";  // Ruta correcta para el curso
+
+$courseTitle = "Curso de Comunicación Efectiva";  // Título del curso (puedes personalizarlo según cada curso)
+
+?>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+<link rel="stylesheet" href="http://localhost/PLANIFICAME/css/courses/cards.css" />
+<link rel="stylesheet" href="http://localhost/PLANIFICAME/css/courses/Curso_de_Comunicacion_Efectiva.css" />
+
+<!-- Contenido principal del curso -->
+<div class="novice-container">
+    <div class="course-header">
+        <h1 class="course-title"><?php echo $courseTitle; ?></h1>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABKVBMVEX///8AAAA14pgWm2IauXX/2ZMe1oj/qQsSfU826Jw25ZoXoGUbvnj/25QVlF4SgFH/rgsYq2zuyonfvoECDAgMVjcf3Iyeh1sf3o0UjVkTiFYbwXr/35f/sQv09PQReEyzs7MLTDAQcUgJPygZEAHl5eUwzYqAgIAFIxYEGxEOYT1tbW3S0tJFRUUceFEPaEIHNCGhoaE0NDQXFxfY2NgqtHkvyIZUVFQz2ZIRRzC9vb2RkZEGLh0MUjQEHxRfX18pKSkorHQDFQ2EhIQ+Pj6IdE5pWTy1mmnKrHQtJhodzYKPj48RERFaWlqi5sRr6LFNQSxiUzkqJBg7MyKnjmCvdAjpmgpJMAPAfwhcPQRnVztPQy1gb2lctIri8usAlFR8waCo18AAGwBKSUwbAAAam0lEQVR4nNVd+3/aSJIPyPYggcXiAGOw17zWBOPEYMcQbAOxSTLJOsnd3M7c3mPvbu/u//8jTqKrqh/qFpIQkKv5YT4BI+mrqq53db94kS7dXl++u3mbuXn/9fo2xs/Omg/fH99mvt28+9A8T/mR0qT7y28ZkV69jvSzs+vv0s9uHn5QkPdvMgF6FwHj9dvg7y5/QIznN8HnXD7rWfjvXmvwLfm/nceOTk39c/oUuh4/GH/2GGcdb55emQFmMk3z794l/N3WSVqBi06/f7eI9KjS74aVfmX4g0IUONHPP1ertkeTpxn/9Fr7szO+dBdXY5vRuDb98SByEW0/H1cPDrI+ObY9atEXD5qfnT8SvlrWdrJZ+l2HfvdjrEVSMsOT4wOfsvSwT/SoQZXKlWhlYmdFcpwafvV2F4BUOiMGHlQPJITZrN3l67Ep/er8PX1xRfzjvxvjlx92gkmmS3iWBmOgCNBjR7dHSN4+oMyd3V/Sp5mireJbvpoyfL17038OT9IHBsoIs85EUByZx++XH15dShq0rgMocPH9rgGimrk4ONAiVCAGqKYH6EF0fxAmnoG+yOtZ6EPM9s0ARyaA3u/u2J/o1PA26Z49RqtqYOGSHVZZj09VojLCEfujNztGCEJqhSHM2pMrDb7OU1CJShBBvFe47psm0BrPpmUID2tP6hcyvv7ICWHg8r3U2V/e7xQgGMO741CAS4z22K1MffNYvuhcPWXD+bf8yehHWIhgK9qhQspB2tlJtzvx/r8S3pKJ7OJ6p3Zb9Jo9RC0KQgbTiQSOIcz9AOvwPoqiSUyOp6Budux8A8L8ZhB6i/Ufdotv0zz0uLhzhM3N8vAHQHgdDaGnXzz9udQxE/gA//3/BGEpBKGHZdIdW7l+Z4rBYnk+bF3VR92JsxLmP+4a4ftwl8ZDlx3XZ6boYnHXHnVXGMddI4RH1bs0tt21KnMDOqLh1cgM0p40d1vHAINf0Qip54q6nXBsnK7Gei+OOW7NHSIEIXUDCO3saBAVHuNkvavBCNHz7rgILBSWYRXwuaGBvZ4GYxWjA6mM3WUyIBOsCKntuBc6BOXedHhXaQ/6s85UvzorCkanC19Eq9KlTw9w/5II0ONf4Ml7nX6jaOXz+dJewacTj0pusT8MxP6zsRQ02pA3/7Yb7xszwWIGw7FHinwuOoO6D86yPHwi+UhL1kDVRldiZgPFdDepDEp17/EklD1Rsk6VuuuDswL4COZeqS6DvBCTGzZebwcQv+ITUSb4gGcAGXUaFkNnwocoSw1pXd51iY3OBD/cdjnxNWV1uYw6kzvhMcsV5J5HIfgApGw7nwiiPaIPH7a3GM/veTltSpbCHokatO8SPCu/Ah/DaIkYB1mUVLtIH/KywIZwvb5vevTw6qP4tk8IYN2AbyUDCWNeqI9OSVJtMRP5+P7af4jmfdpYz5rvMzrqnVRRQoV6aEfEF4WBSCd1wXyQpEK6RqXHr+mhvL3U3sLTlM9VMBJdbiMuGgK+qAxEPu4JuphKGnbQwjK6uU5laZ6b8GXqVbTyQg2tYiUH6GPM89V8RRDHQ939PXrbXB+gsY1kxldKl38qMTCOhHI2tuhiA7yDY1taR9CjN+uy0cDARZ+7kIJCn9bWBehj5Ouuwk2/497pHiSzptN6pu13uRs8TbjfIQCcWdb6AH1Jpdp4n7twfptGXyutzTUQitXaQb3kr6rxZJIVsysOF9GByMBYS9D3UT0Hjv5ZonV9JXqpflVg0h2PR6OnnMjR5FzkbSSV0nG1euD9p2aOnAm973Y+GQcLe1ajcueFH17kQR+S+VfL/A4j257U+NJMGiLzNpJSNdBmAffL0rtsJANY2GvTk07r/PMWfugainCOnSV35zGZusEehMwA20g0qcIK/lEuIcCapCQ7JWIjuRDmSrg9Qg/hMhFC1DI5Y4lecBoTAjxpZ2Qq5wkiCerEmG7kTSlJ/BtMwvDaYDXAQVKj8hq0InNQBegRh4h+UiuknQH1XJL4EVg4NKeznQmGdX0ZYFQ1WihmgtTj36MAG3pumKDC38SvhSMLT0JkFJ3IVkKAlgagt+yRiYUSfjQyp8VtyFq+i40QLEXbXKG38QGnMsDIi5AAZL79/PnzL/iPMr2hAnbw9YwAuZzGthjQ+0nxXwAhJRjKNQlg5EVI6yzz6fD08PT06Ff4Z4NWYgHTytrmN3jRED/GLfeDqZiZVyGKh6plIssomYOfT/d9Otz/Mwg9N/x76KZ1jXKaNG0M1t5c3KVE310yGeVq9J9OD5cI908/wyfCn6Ekh+hTm7l4b2NafViGBaOQ2mCuFrKIRpXRAiU9fgN8Hh0FEZK6fTLbfRCmmAhZ1CR0HCoISc00EsloIY8A/3TEEZ4GEZKcmpUNpgBi+t8sLzM9NiGcgPffySdiYYn89Zen+5zgM/E1kUmxTEx0ntgfxLSILG4acoSyQ0MsrFtJWEgKJPNZAKhbhx5EcH3nJl2DCJvxEH4MR4h9g7NELORq9JPIQdSlHeXPV6xE9B1jImRS2jNIKTmkVhIWcnf7l8NDgYWf4NN2QfpzNIo9E8JkUsp06cLQgoCKtJKEheSpZH7bP9TIaEZ9T2gxnvRyasP1YoYXUBvUt5EQC90ELORqNHMkAnyJn1YK6i+AiXeGpncIwmNaC2jnymndUnS5W0lYWKKQV1Sjh2gLM2XNT+ArvWMzYTHiTTyA6LVNtVI6gYdUFGk0d0arRvf30SnNuCoLuTrVRlGo1mMPLEL9RdfPhUtbtYVRhPSE0h6SGj2lyKIdBEg2saNjoQM6IXaACP1cPQ0TUUgb8YVU9EZFgKhGMzMNQO9n4F+Mg2KKLIzrlvJxJk2ACGFTWdEzEYSUq9G/iGr0kLTMMPzFXAXElGK4BFO1mCwNzIrEFlLWfOGTXo1yGb0oaVlIumauInRw7iRJypRm0koKRPTlFSHN+10HAi3bEHx8pWJlOF9c+EQAv0ha5vQ3+LhTzO9pMZ6AflLSbg5lMxMNRl8bINqQwVNk1B1Ik7H+mnJ9fLqZoN8lgPuHvwnftXV8RDFVjT5ePOGcIpVlJIgo+bKQ5rXDTcNSTfex7I16PPxV+rqiwQjyPZDE1KGbJpw6OaMdEsSEGy5DKYOYb+mQeNpI9+GvCsD905/lP1jUTgIQ2ZWkhcgr/ImHTiivzw1/la5bXMlBA/1ZVKNA6t8ErGIBXqFgLyiCS5jTX9It3VHoe4JFL9oKrSwa6C8vgwC5U4o0UCAWGuxznjnlZb01APK8sNDaBW7gUGRhJROZPh2pMrrUNUe/KH/XVgQVFiJ33CgfvRZA8sCF2S0ISMXYN2+YL0T67fcvLxkd7Z8GObiEeLp/9OXzJ+FHlsxFsIhUFE6vqQ9tBjKxCrcSC75oyP/5jwL99V+Ibaenh0haeAjSoy9kOBbKSmSOG0VQdov9WXxvLUDggveBiVVY36KiwX6XP/4k0B/+Cp/+GgYrCJP42JCYeMIc7N5EWYUpTCfCUixDuF+FTom6BuEffpIgwqefdQvPTKe/a5mIERTEiNhklkpXJjR8gdk/ZgtcKlaEI9ToznCIyMWcyERUpmAuUKOn0vkFymbAxLTK5H9ubQzh/v6f2A87ojrFsIQhRCGNG9jrCez+Hagath6kilrKCElO9zQImUHETFFKm0qw7PAFLEQmHsMNIiQXpyaIaQFuwnxvzK+l1MQPnV8nW0N4+jf2y6IGIWs+wQgupQbMryLC5+kWEIKukewFWCnm1KBDk9I0TXPrCCHW6IsIwa1g1WCb2Y6EnUIBupYQMt+isw2EFQ1CiYffUuKhtA6f57tBiBlFeR2mhJDt+QdOTZVZi8rWEcJNLKZLoTScjqY5YztWdcBrY3pa6r/YCkKwD8xaYKIhnf0WwDHFTYR8iBfF/K4QgsWH2Cl+n5COIHFKY5TV47GSKd0KQpBL8EudXnoLEZM1vC2jOrF2gBAsIMYWoGrS2EASNGlHyO7vAiHEhxcYH2IJc30mYqZGKkLtQEqhR+yOJgTmKa3Ec8iZXogAnR0gLLFcUIXyNE9w+TXDC9q80ZLS3nvbRwguTY6nhLHUup7FwDk1aS8vx6kN6lu2+NglxgsXvEG5uQZA2n5TSusvN0MUnZptIIQ0jdBLy5P6ybNRtEWzVEOE3ofidqWU2b+FVJi5WxcijfoWjwWAuEGV0IixBYSQpZWaMB3smEg6zU4ZfRkgIsxsEyFOe8njJQ72Dya0GbhFrDpvgdsAFLeI8KTFPlFaFfjmoc0EADGd31br+NjPyQuIW5BSuFagjo8jJUmKwHDNTqAXA3OVve0hRFvRD/Ri0LxFfKuIRadnFSDXYcWtIcRGBU3vHs5Bx88Ng6UoanqiMMAmbbpxhODQzAP4hPHAuKlTqOGX1a1nlheF8JNahjaN0NwwlOU1mrj+KQb2+t7EFvsWa4ibypdSNR/iCE3TF1cLcQ0G9JfqN2JDv763KR5CybtekIzh0NBBC617iaYRTENBDjw8jMukjhAavrFugc2ehg5a8E9jxsJM0cwP9AjxohcbQUjdtJZkKjJafN7DgETFVDXh0wjUEciYuKnqGqsfFkBZmqa7NjONgEycb0RKoULKyhZY/M1MDDxMOI3AetqMMzPUKLB03VKucmMPGFuGkL7QmwqRhzFDKKZp5lUDQh5+1tJGSO20ZSn0Nc87J1yH4bpUWIl+mS1NhIdHIKOseojlipAZS3zZMa3Fym07sc7sKxttP81PP8Gnn+MgPD0CS4ETzxAehczJQltG3CgYevYGIWPAGJq51BP1r2JP1E//Bp/+e/R+msPTL9TxuSxxn2DzmnnbgaQ+DZwIcKHzS+HKGLdMLT5MKFCG6Hfe9BVKp6cv/0Y/Wo7KkimshIyQgjDF7jGFPqGQnbppELiyqjfxl5dHEejLJ6EZerrUMvTqzGPA2SzIUuxSIsSHxnMrxA0HGnH6SyMRTKzjtLdp948szzgk6B2Ci4etRMrJ1mI0mEahxbLTG5MzYTJKhjlB5hvzNFbIpgq060P07WajUGc5kkCWcJ41j6o7mNtPkk/EXJs6byFCRGA9V8vFYSLesg5oPkCkDQsBIN4gUfECMzUZ69i4FOm0o6lVbwVYUeSbIkQnmEU4of2wjEfReKzFcduEHXy0z1fbuAUPP5ipZ3mWv0hUW+7G6jeJxNtvtwKbt3CAA+OEsz2mLTOT9mTQDonl2jPsoxSA+EQQXamqiFMhhRO3P+2VV9KiN+wMLNwOi/N+pgXoOLYz5iMQzYQA+eiTR31r7+T54PhYPX6DvLfMvC5DpIx84UQaiDLQ3kmBtvsq0MMPRS3jLA8B8WjSHdWFzb7WKJKeS+eKlufT4fBuUBtlRZTCxo05PcS4VMDxEb+tm9cLbXv8lGsNp71eT95oea1xhDP92ZtDV9ySju8UlHzHNhEg361tTgAde1LraZ8l83UdgB5E076Q4raCfOtSaWPPZBCFrZWmBNDuGueO1m/WvzcchZrpPx+DPy5wcSFJavyNBQt73IR2EKBwXKBKqRw6e3ZturwLze3CkJW6vWdMgCcuX2IzVDJ217S5Z5TDeKORaYvPCroC9lgYDGonldRCSVCQA1wFwtaTMn1Pcb995OJUHRNtYfxYFXahzQxFuxFjf8GGcGUKJ2SAi56nz0HlpLhTO9rFTrHRaPc7Isw7CpAnooPWETFG20xiT9zUuzfWAZy32o2c5zDhm0jvVGQ6pjLnkXeHdovflR8bIJw6yjDmo7OxsNcW59/6ZOeFvTUX/WIxt6Qi3j8tMcU5ywrcwLtFrkUPVCO/3J4IyD2RbnPTEcrGwp48g1oWAl6bVuasSLfP5eDuaR0LARPPFzmBim2yvzzj6DiuNIlYbvknIoRi9I8PaMiqctAVAJKp7RfFu+MbSUeXYhTVz0lUxNhQrDHaEyVcWnTa7GQEDUZ/41m3rViC3kjwCPm2+u2ifHd4v+kcKACOW8dPbntUw3sV8dn2pI6pcWBH40Vr4M/y5a1lQFVgtLdXqjUCmYFyXfLryZUY4Aqs+4/gWhZ+0UwBIFoKPnDo1uUXOZDycY54ljOneadVGQwatbxVKzbag4oubJzXlWM7Uc3MACDvn8/je1wfIFoKabedGnuhKJFKv4bjjGaZ+HThqseSYmQGGqAojo9jnn398x9xAxB5IxOACIwI7D3ohd+6k0fDqGNlgxuXwItiSrwoPQHlaNe1GHSgsdIWXBeZqOln8GLwJ9MW40Ga1ru2JhuD28QwGbUUArW95rA6pr7V3REtizERHkGbU3X8I7tUN0/HvauRE3Kele9KyWsQmIi5uPUsBm0mnFcR1kR1yhPjckODbU9G5IDoaH711DUeuoqalJnCwDu2QNGt18sOuahp8PKu6D7t6RECSqdr5SpTZVeCxd2VOwo/PA+HDJfiUg88QR7TJ+vEwBg1FQMs9CySjxCWe96MEFB6NPF3i/doNBqNx/6BsqtOlMV5ba2Q+hDBnH5bAyGuFA1AGWGk03JFCscGCFmwsTAhpA1HknfrYxu07uoMYT8GwtgENdj5EqGreYQ8mt2kgSJaCnV3xK0hZDy8MCK00NFPGihCWKjuWqZBuJmzZGFDqhCEefSqkpl9tBQDLQu3gZBdvGdGaFmQF0gWKMLxHT39pZlXA1ZX12cbJKZSIyhRGeE0BGEeExpJzD5aipyehQwh3KC18mx1/zgKzyz274ad2VXdN4QrAWKj7l0YD/EUrMcECKFkMTQAZE5NgzVGmnoY+dM64yspXmpZaiARZCGEDzODSwMvGi7YjA0wGBYq5IpuWykUoRcyBr3w8tUKjJiiaQcDC5GJLWBiXIuBlkLdClmgnGDy+2EL0e62AviW5IZZfhTShcFpozcNF4sbKEJYaLAUSyoKqkbIZATO+TAeKuYtsRA2YruOPrIQmIhZqXgWAxOIalgoUl0MglvmBriwWLg8NvZUYv18ELoMfYIILV6gCAnEYFgoioeU1+NpU6XXVimLqZUsQ8Oag61OPU18rzAR5ShOMR8TiOouszKxe2MuXtuU4mSFfpOP1+wZzu4vBZxaiA4OPAALQxaLBzFBahFaaaahACEIpgRpYCtXGaBc6WtyjJq91vnvpitZaPHUYvRAES3FigsDE/nxWsdKU4rdJSPxqDodZx8Ioqv6OPaYrtnOhesZxkS4TeSuGtzVU92uW8/EXI5qRp09xLgUNIcrUd0ZfrwoeSeeye15O7xq3o/CwviBIr7dFW+OmCiUjVr55+qS7OzE5VkovZqjIVUvQBtNwGXNjoUjkiATHLoKl0xEoY5m9sPDQolclnETz6Uqz9remykORCfGFL7dCs0si8qVa/knWQu/axVXWHtOsVKLMJdXjnBdSn6Hbn5pbgc5N3VBLKkDufwIz0GBYhSLYU4g6oiVMIoNQ6+LT2GLw9CvsyQsV66U0SXEGBYDE4iRAMJS9DCaKhVvVkRuD4bfzbGetlobLBFGTy1SAjEaQA6xrW2iba684bnuqOHFLBcLIE8tPq66H/Toq6c4RYDoiWor8KSRvOEP6q/KFcQXGSAPFFdZjNAEounaOcRYHLR6otKJZp/OxP7A8nQ24BX7SGuQUcTUoqnUFE61HMfolz8HsOyjRqXoQ80Gg0GjyPFFXimM4CrhFgP7SuJd2rNjOYHIVW1GA0iF9GlRuk4cObIiWox4lsKEEcON6L4+NUMIV4li5xWKsLESJBCjWgoZIy5HzGzEyfBBPFqml5QAH08tmi0GvsqY8k9UYyATtPPg+l/6acV6DAUjQVyZWoSwMIalCJBbq7XgaWPlTbBdoFhLiG5JqywGuhfr3MPKYyQTL/elbfmIf3N8u+E3iRBThN0Egoq4e6WvzM9GovDUYkJLoVDiZiVYIsYceyQKDRRxsWtKTfklub6GW3V/9PHjj+mgmjPVSfjDeFGpyx4p+C1WFHUjGHjAkwLNct1ao1/BttlZLfQB1mkBAVN1seIdtpnVKw9n/XbddS0ZKJl9DRNBSJcJRMazerFduRtKJ4NnVmUY4UV8jw+QstCGeiWQEsGUp51ZP1evWcRS80jpd3iDPrTGoDXsmZp9QsQoYYZdfsdhlYS8qWt/Pu1U2g1vFSETNUIE1++pPAuS+QHQUiQbRFqdIMqvHPYrY7JB845NEwdBMgYeaI6SNtGjQTa73JGfURfWnK3+GZCxmhE1CDUSBIra/p1ILCTSpve+hv7k5vLhugk2yxB65KEOlfAArRdcjkxMBBF81bx+9SYcoV4R6BIm327evbq+vwWeg0XRtLlZgqVYo8/sY9grxNgB3+D5ffPr+4+PgWfOmI2VmDB5fHf5ofn6VhZnzDfogw/QUev0Cr4Ouz4qUsUlO799ff3q/Rsh9RooknC6fXhzc/P9w/X9+bleWcA70C0UshRr7ZO+jDF6+lWAy1z/aGfnt82HD98fH98315kWQoWuMVno9K45quMthP/Q4iNNnd4skJYg5R80WRS4pDBu9Z9ahPgKUzq1w0SYyTGK0Pq98y9e/NffdSyEVZDOEEkIgbZTnUdyp1K5yX/rIELUkMIRVuEEJkvpdouQBIpDZxoWgi16TOUGoTcH+6P436nOIb148T9/r7mKlMAd0jnvIZQeNAaD3Km05nLv/zezkA/JxNpSipOxJkKDIXlWKU13IN0G1jqWltK6QyhBmCV0vKU2oYP0IWB1MS7bsKlghLE4vz1aqjV3N+AE2VOeWsTCUjpnkqwk1WCkOCkHhDEGTy2mqqpXEm6ShXdPc9oRCKc687ImW2d2JBaBwcCcFBj7jyneQWmsy8+3ZioYQZjIkrdrNZMbCYpR4FigqUhvi4EVhAZjuUzyEBYmSSCaCdXZMhZGU5HSaYdRSNB16yUQzSTWGGqbuUUY4Rt2UwsLAyTUidDcprW/QCSCZdLPpxkWyoTFqFoeTUWqC30Voa7Lr51ANBK6+B00FY+p3yKUsBYGaiadM11lwreIlYrmBu4RQsq+QxvxNZSU6CZuEUJSH9OG3MVbCeDWrD2SVObYkBp/JdxiE+tgBQnbnDU3dQ9BTreqSIEoQ745h592i3vcSlwYoPOvbzJv36yVYV5Jr189fnu8XOcd/h8StUok2IZaPgAAAABJRU5ErkJggg==" alt="Curso PHP Logo" class="course-logo">
+    </div>
+
+    <!-- Estrellas antes del índice -->
+    <div class="stars">
+        <span>★★★★★</span>
+    </div>
+
+    <div class="course-index">
+        <h1>Índice del curso</h1>
+    </div>
+
+    <!-- Contenedor de cards -->
+    <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="module">Módulo 1</div>
+            <div class="title">Introducción a la Comunicación Efectiva</div>
+            <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+            </div>
+            <div class="circle">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="stroke" cx="60" cy="60" r="50" />
+                </svg>
+            </div>
+            <button class="start-button">Iniciar</button>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="module">Módulo 2</div>
+            <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+            </div>
+            <div class="title">Escucha Activa</div>
+            <div class="circle">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="stroke" cx="60" cy="60" r="50" />
+                </svg>
+            </div>
+            <button class="start-button">Iniciar</button>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="module">Módulo 3</div>
+            <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+            </div>
+            <div class="title">Lenguaje No Verbal</div>
+            <div class="circle">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="stroke" cx="60" cy="60" r="50" />
+                </svg>
+            </div>
+            <button class="start-button">Iniciar</button>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="module">Módulo 4</div>
+            <div class="bar">
+                <div class="emptybar"></div>
+                <div class="filledbar"></div>
+            </div>
+            <div class="title">Comunicación en el Entorno Laboral</div>
+            <div class="circle">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="stroke" cx="60" cy="60" r="50" />
+                </svg>
+            </div>
+            <button class="start-button">Iniciar</button>
+        </div>
+    </div>
+    
+
+    <!-- Resto del contenido como detalles, ejercicios, etc. -->
+    <div class="course-details">
+        <!-- Detalles del curso -->
+    </div>
+
+    <div class="exercises-container">
+        <!-- Ejercicios del curso -->
+    </div>
+
+    <!-- Preguntar si el usuario quiere guardar este curso -->
+    <div class="save-course">
+        <h3>¿Quieres guardar este curso?</h3>
+        <form method="POST">
+            <input type="hidden" name="course_name" value="<?php echo $courseTitle; ?>">
+            <input type="hidden" name="course_url" value="<?php echo $coursePath; ?>">
+            <button type="submit" name="save_course">Guardar curso</button>
+        </form>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>Formación Profesional IA &copy; 2025</p>
+</footer>
+
+<?php
+// Verificar si el usuario ha guardado el curso
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_course'])) {
+    $userId = $_SESSION['user_id'];  // Suponiendo que el ID del usuario está en la sesión
+    $courseName = $_POST['course_name'];  // El nombre del curso que se va a guardar
+    $courseUrl = $_POST['course_url'];  // El URL del curso recomendado
+
+    // Conexión a la base de datos
+    include('../../../config/db.php');  // Asegúrate de incluir la ruta correcta
+
+    // Insertar el curso en la base de datos
+    $stmt = $conn->prepare("INSERT INTO user_courses (user_id, course_name, course_url) VALUES (?, ?, ?)");
+    $stmt->bind_param("iss", $userId, $courseName, $courseUrl);
+
+    if ($stmt->execute()) {
+        // Curso guardado correctamente
+        echo "¡Curso guardado exitosamente!";
+    } else {
+        // Error en la inserción
+        echo "Error al guardar el curso: " . $stmt->error;
+    }
+
+    $stmt->close();
+}
+?>

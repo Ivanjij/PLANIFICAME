@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'standerdRegular';
+    src: url('http://localhost/PLANIFICAME/fonts/otros/standerdRegular.otf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'standerdRegular', sans-serif;
+    background-color: #ffffff;
+}

@@ -1,0 +1,373 @@
+/* Contenedor principal del curso */
+.novice-container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #f4f4f4;
+    box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Cabecera del curso */
+.course-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.course-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    font-weight: 600;  /* Hacer el título más destacado */
+}
+
+.course-logo {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Estrellas antes del índice */
+.stars {
+    font-size: 2.5rem;
+    color: #c5b800;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Índice del curso */
+.course-index {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Contenedor de las cards */
+.cards-container {
+    display: flex;
+    justify-content: space-around; /* Distribuir las cards de manera equitativa */
+    flex-wrap: wrap; /* Permitir que las cards se ajusten si la pantalla es pequeña */
+    gap: 10px; /* Espaciado entre las cards */
+    margin-top: 30px;
+}
+
+/* Card individual */
+.card {
+    display: flex;
+    height: 350px; /* Mantener la altura original */
+    width: 200px;
+    background-color: #17141d;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+    transition: 0.4s ease-out;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Título del módulo (Módulo 1, Módulo 2, etc.) */
+.module {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Título dentro de cada card */
+.title {
+    color: white;
+    font-weight: 400;
+    font-size: 0.9rem; /* Texto un poco más pequeño */
+    text-align: center;
+    margin-top: 20px; /* Título debajo de la barra */
+}
+
+/* Barra de progreso */
+.bar {
+    position: absolute;
+    top: 150px; /* Mover la barra más abajo */
+    left: 20px;
+    height: 5px;
+    width: 150px;
+}
+
+.emptybar {
+    background-color: #2e3033;
+    width: 100%;
+    height: 100%;
+}
+
+.filledbar {
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+    width: 0px;
+    height: 100%;
+    background: rgb(0,154,217);
+    background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
+    transition: 0.6s ease-out;
+}
+
+.card:hover .filledbar {
+    width: 120px;
+    transition: 0.4s ease-out;
+}
+
+/* Círculo de carga */
+.circle {
+    position: absolute;
+    top: 160px; /* Ajustar la posición del círculo */
+    left: 20%; /* Centrar el círculo */
+    width: 80px; /* Hacer el círculo más pequeño */
+    height: 80px;
+}
+
+.stroke {
+    stroke: white;
+    stroke-dasharray: 360;
+    stroke-dashoffset: 360;
+    transition: 0.6s ease-out;
+}
+
+svg {
+    fill: #17141d;
+    stroke-width: 2px;
+}
+
+.card:hover .stroke {
+    stroke-dashoffset: 100;
+    transition: 0.6s ease-out;
+}
+
+/* Botón "Comenzar módulo" */
+.start-button {
+    margin-top: 170px; /* Empujar el botón hacia abajo */
+    padding: 8px 14px; /* Hacer el botón más pequeño */
+    background-color: #58fdd1;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Hacer el texto del botón más pequeño */
+    transition: background-color 0.3s ease;
+    width: 80%; /* Asegurarse que el botón ocupe un buen espacio */
+    text-align: center; /* Centrar el texto en el botón */
+}
+
+.start-button:hover {
+    background-color: #ffffff;
+}
+
+/* Detalles del curso */
+.course-details {
+    width: 100%;
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.course-details h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.details-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.detail-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+.details-list li:hover .detail-icon {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Contenedor de ejercicios */
+.exercises-container {
+    width: 100%;
+    padding: 30px;
+    margin-top: 40px;
+    background-color: #eef2f5;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.exercises-container h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.exercises-button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.exercises-button:hover {
+    background-color: #218838;
+}
+
+
+/* Estilos para el Modal */
+.modal {
+    display: none; /* Inicialmente el modal está oculto */
+    position: fixed; /* Fijado en la pantalla */
+    z-index: 1000; /* Asegurarse de que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+    animation: fadeIn 0.3s ease-in-out; /* Animación de aparición */
+}
+
+/* Estilos para el Modal */
+.modal {
+    display: none; /* Inicialmente el modal está oculto */
+    position: fixed; /* Fijado en la pantalla */
+    z-index: 1000; /* Asegurarse de que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con mayor opacidad */
+    animation: fadeIn 0.5s ease-in-out; /* Animación de aparición */
+}
+
+/* Contenido del Modal */
+.modal-content {
+    background-color: #1c1c1c; /* Fondo oscuro */
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 15px;
+    width: 40%;
+    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.219); /* Sombra luminosa con un toque cibernético */
+    text-align: center;
+    animation: slideUp 0.5s ease-out;
+    position: relative;
+    border: 2px solid rgba(0, 255, 255, 0.5); /* Borde con efecto de neón */
+}
+
+/* Estilo para el botón de cierre */
+.close {
+    color: #58fdd1; /* Color neón para la X */
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover para la X */
+.close:hover,
+.close:focus {
+    color: #bed300b4; /* Cambio de color al pasar el ratón */
+    transform: rotate(90deg); /* Gira la X al hacer hover */
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Animación de deslizamiento del modal */
+@keyframes slideUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Estilo para el título dentro del modal */
+.modal-content h3 {
+    font-size: 2rem;
+    color: #ffffff; /* Texto en color cian */
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilo para el botón de guardar curso */
+.futuristic-btn {
+    padding: 10px 25px;
+    background: linear-gradient(145deg, #58fdd1, #141414b4); /* Gradiente futurista */
+    color: white;
+    border: 2px solid #58fdd1;
+    border-radius: 2px; /* Bordes completamente redondeados */
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3), 0 0 15px rgba(0, 255, 255, 0.5); /* Sombra luminosa */
+    transition: all 0.4s ease;
+    width: 250px;
+    margin-top: 20px; /* Espaciado hacia abajo */
+}
+
+/* Efecto hover para el botón */
+.futuristic-btn:hover {
+    background: linear-gradient(145deg, #141414b4, #58fdd1); /* Inversión del gradiente */
+    transform: scale(1.1); /* Aumentar el tamaño al hacer hover */
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.5), 0 0 25px rgba(0, 255, 255, 0.7); /* Sombra más luminosa */
+}
+
+/* Estilo para el formulario */
+.save-course form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para la notificación (Toast) */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px; /* Centrado */
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px; /* Ajustado a la parte superior */
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}

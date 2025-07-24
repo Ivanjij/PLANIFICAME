@@ -1,0 +1,423 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+/* ========== HERO ========== */
+.hero {
+    position: relative; /* Para que partículas se ubiquen correctamente */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+    padding: 0 100px;
+    background: linear-gradient(30deg, #263cffbb, #ffad7e) !important;
+    color: #000;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Partículas */
+#tsparticles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+/* Asegura que el contenido esté encima de las partículas */
+.hero-content,
+.hero-image-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #000;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #111;
+    animation: fadeIn 1.7s ease-out forwards;
+}
+
+/* CTA Button */
+.cta-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+    background-color: #ffad7e;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* Animaciones */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Hero Image */
+.hero-image-wrapper {
+    width: 80%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute; 
+    top: 0;
+    left: 32%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1s ease, transform 1s ease;
+    background: transparent;
+}
+
+#heroImageNew {
+    width: 205%;
+    height: 90%;
+    object-fit: contain;
+    left: -53%;
+    top: 10%;
+}
+
+.hero-image.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Entrada animada inicial */
+@keyframes slideInRightFade {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.init-animate {
+    animation: slideInRightFade 1s ease-out forwards;
+}
+
+/* Desaparición */
+.hero-image.hide {
+    animation: slideOutToRight 1s ease-out forwards;
+}
+
+@keyframes slideOutToRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* ========== SERVICES ========== */
+.services {
+    padding: 50px 100px;
+    background-color: #222;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #111111;
+    padding: 30px;
+    border-radius: 15px;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(95, 98, 255, 0.733);
+}
+
+.service-card i {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #ffad7e;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 16px;
+}
+
+/* ========== TIPS ========== */
+.tips {
+    padding: 50px 100px;
+    background-color: #111;
+    text-align: center;
+}
+
+.tips h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.tip-cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.tip-card {
+    background: linear-gradient(5deg, #5263ffda, #ffad7e) !important;
+    color: #000;
+    padding: 30px;
+    width: 30%;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.171);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(95, 98, 255, 0.733);
+}
+
+.tip-card i {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.tip-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.tip-card p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ========== GALLERY ========== */
+.gallery {
+    padding: 50px 100px;
+    background-color: #111;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* ========== TESTIMONIALS ========== */
+.testimonials {
+    padding: 50px 100px;
+    background-color: #111;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.swiper-container {
+    width: 80%;
+    height: 150px;
+}
+
+.testimonial {
+    background-color: #cfcfcf;
+    padding: 30px;
+    border-radius: 5px;
+    color: #000000;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 100px 40px rgba(95, 98, 255, 0.733);
+}
+
+.testimonial h4 {
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.testimonial p {
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* ========== AUTH SECTION ========== */
+.auth-redirect {
+    padding: 50px 100px;
+    background: linear-gradient(30deg, #263cffbb, #ffad7e) !important;
+    text-align: center;
+}
+
+.auth-redirect h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.auth-redirect p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.auth-buttons a {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.auth-buttons a:hover {
+    background-color: #ffad7e;
+}
+
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo de la notificación */
+.notification {
+    position: fixed; /* Se posiciona de manera fija */
+    bottom: 20px; /* Distancia desde la parte inferior */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Centrado exacto */
+    background-color: #ffad7e; /* Color verde */
+    color: rgb(0, 0, 0); /* Texto blanco */
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 9999; /* Asegura que esté encima de todo */
+    opacity: 0; /* Inicialmente invisible */
+    animation: slideUp 2s forwards, fadeOut 3s 2s forwards; /* Animaciones */
+}
+
+/* Animación para que la notificación suba desde la parte inferior */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        bottom: -50px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 20px;
+    }
+}
+
+/* Animación para que la notificación se desvanezca */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        bottom: 20px;
+    }
+}
+
+

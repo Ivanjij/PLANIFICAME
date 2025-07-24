@@ -1,0 +1,287 @@
+/* Estilos generales */
+.user-progress {
+    padding: 50px 100px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;  /* Para evitar que los elementos se salgan de la pantalla */
+}
+
+/* Sección de bienvenida a pantalla completa */
+.progress-header {
+    width: 120%;
+    background-image: url('https://cdn-blog.superprof.com/blog_mx/wp-content/uploads/2021/04/clases-programacion.jpg'); /* Cambia la URL si quieres otra imagen */
+        background-size: contain;
+    background-size: cover;
+    background-position: center;
+    padding: 115px 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+    color: #000000b0;
+    margin-left: -10%;
+    margin-top: -10%;
+}
+
+/* Contenedor principal que divide el texto y las cards */
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Texto de bienvenida en el lado izquierdo */
+.welcome-text {
+    flex: 1;
+    max-width: 50%;
+    padding: 30px;
+}
+
+.welcome-text h1 {
+    font-size: 56px;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.welcome-text p {
+    font-size: 22px;
+    margin-top: 15px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+}
+
+/* Cuadrícula de 4 tarjetas pequeñas del lado derecho */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 140px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 15px;
+    flex-shrink: 0;
+    padding: 30px;
+}
+
+.mini-card {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.mini-card:hover {
+    transform: scale(1.05);
+}
+
+/* Tarjeta de bienvenida */
+.progress-header .welcome-card {
+    background: linear-gradient(135deg, #4e7dff, #00f5b4);  /* Degradado de azul a verde más vibrante */
+    border-radius: 25px;  /* Bordes más redondeados para un diseño más suave */
+    padding: 50px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);  /* Sombra más suave y grande para profundidad */
+    width: 80%;  /* Ancho más grande para un impacto visual */
+    margin: 0 auto;
+    text-align: center;
+    transition: all 0.3s ease-in-out;  /* Transición suave cuando el cursor pasa por la tarjeta */
+    animation: slideIn 1s ease-out forwards;  /* Animación de entrada más fluida */
+    border: 2px solid #00f5b4;  /* Borde sutil que resalta */
+}
+
+/* Efecto hover de la tarjeta */
+.progress-header .welcome-card:hover {
+    transform: translateY(-10px);  /* Desplazamiento hacia arriba al pasar el cursor */
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);  /* Aumenta la sombra al pasar el ratón */
+    border-color: #4e7dff;  /* Cambia el borde cuando se pasa el cursor */
+}
+
+/* Título de bienvenida */
+.progress-header .welcome-card h1 {
+    font-size: 60px;  /* Aumentar tamaño del título para mayor impacto */
+    color: #fff;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5); /* Sombra para hacer el texto más legible */
+}
+
+/* Subtítulo debajo del título */
+.progress-header .welcome-card p {
+    font-size: 28px;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); /* Sombra suave */
+}
+
+/* Animación de entrada de la tarjeta */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Estilos de los botones y enlaces */
+.btn {
+    background-color: #00f5b4;  /* Color de fondo del botón */
+    color: #111;  /* Color del texto del botón */
+    border: none;
+    padding: 12px 30px;  /* Mayor tamaño del botón */
+    border-radius: 25px;  /* Bordes muy redondeados para un aspecto moderno */
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;  /* Efecto de transición suave */
+    text-decoration: none;  /* Sin subrayado */
+    margin-top: 25px;
+}
+
+/* Hover y efectos del botón */
+.btn:hover {
+    background-color: #4e7dff;  /* Cambio de color al pasar el ratón */
+    transform: scale(1.05);  /* Aumento de tamaño del botón */
+}
+
+/* Efecto activo del botón */
+.btn:active {
+    background-color: #00c389;  /* Color cuando se presiona */
+    transform: scale(0.98);  /* Efecto de "presionar" */
+}
+
+/* Botón deshabilitado */
+.btn:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+/* Estilos de los cursos */
+.courses-section {
+    margin-bottom: 50px;
+}
+
+.courses-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.course-card {
+    background-color: #222;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 245, 180, 0.3);
+}
+
+.course-title h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.course-progress {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    background-color: #333;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress {
+    background-color: #00f5b4;
+    height: 100%;
+}
+
+.saved-courses h2 {
+    font-size: 36px;
+    margin-top: 50px;
+    color: #fff;
+}
+
+.saved-courses .course-card {
+    background-color: #2e2e2e;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.saved-courses .course-card h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.saved-courses .course-card a {
+    color: #00f5b4;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.saved-courses .delete-button {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.saved-courses .delete-button:hover {
+    background-color: #cc0000;
+}
+
+/* Imagen de los cursos */
+.course-img {
+    width: 250px;  /* Reducir el tamaño de la imagen */
+    height: 250px;  /* Ajustar la altura para mantener la proporción */
+    object-fit: cover;  /* Ajusta la imagen para que se recorte de manera adecuada */
+    border-radius: 50%;  /* Hace que la imagen tenga bordes redondeados */
+    margin-bottom: 20px;  /* Espaciado entre la imagen y el texto */
+}
+
+/* Estilo para el footer */
+footer {
+    background-color: #222;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}

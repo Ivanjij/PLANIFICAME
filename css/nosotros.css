@@ -1,0 +1,140 @@
+/* Sección de Introducción */
+.intro {
+    background: linear-gradient(30deg, #263cffbb, #ffad7e) !important;
+    padding: 50px 100px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 48px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 20px;
+    color: #000000;
+}
+
+/* Estilo para Misión y Visión */
+.mission-vision {
+    padding: 50px 100px;
+    background-color: #141414;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mission,
+.vision {
+    width: 45%;
+}
+
+.mission h2,
+.vision h2 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.mission p,
+.vision p {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Sección de Servicios */
+.services {
+    padding: 50px 100px;
+    background-color: #222;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.service {
+    background: linear-gradient(5deg, #5263ffda, #ffad7e) !important;
+    padding: 30px;
+    border-radius: 15px;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(95, 98, 255, 0.733);
+}
+
+.service i {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.service h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.service p {
+    font-size: 16px;
+    color: #000000;
+}
+
+/* Estilo de Nuestro Equipo */
+.team {
+    padding: 50px 100px;
+    background-color: #141414;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.team-member {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(255, 186, 95, 0.733);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #fff;
+}
