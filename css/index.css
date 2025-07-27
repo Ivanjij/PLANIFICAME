@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'standerdRegular';
-    src: url('fonts/otros/standerdRegular.ttf') format('truetype');
+    src: url('/fonts/otros/standerdRegular.ttf') format('truetype');
 }
 
 * {

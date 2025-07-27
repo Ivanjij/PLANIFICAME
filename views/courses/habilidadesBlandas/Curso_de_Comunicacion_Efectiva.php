@@ -1,9 +1,9 @@
 <?php
-require_once '../../../includes/navbar.php'; // Subir dos niveles para llegar a la carpeta 'includes'
+require_once '/includes/navbar.php'; // Subir dos niveles para llegar a la carpeta 'includes'
 
 // Establecer el nombre y la URL del curso
 $courseTitle = "Curso de Comunicación Efectiva";
-$courseUrl = "http://localhost/PLANIFICAME/views/courses/habilidadesBlandas/Curso_de_Comunicacion_Efectiva.php";  // URL fija del curso
+$courseUrl = "/views/courses/habilidadesBlandas/Curso_de_Comunicacion_Efectiva.php";  // URL fija del curso
 
 $showToast = false; // Variable para controlar si mostrar el toast
 $showModal = true; // Variable para controlar si mostrar el modal al inicio
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_course'])) {
     $courseUrl = $_POST['course_url'];  // El URL del curso recomendado
 
     // Conexión a la base de datos
-    include('../../../config/db.php');  // Asegúrate de incluir la ruta correcta
+    include('/config/db.php');  // Asegúrate de incluir la ruta correcta
 
     // Obtener el ID del curso seleccionado
     $stmt = $conn->prepare("SELECT id FROM courses WHERE course_name = ? AND course_url = ?");
@@ -48,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_course'])) {
 ?>
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
-<link rel="stylesheet" href="http://localhost/PLANIFICAME/css/courses/cards.css" />
-<link rel="stylesheet" href="http://localhost/PLANIFICAME/css/courses/Curso_de_Comunicacion_Efectiva.css" />
+<link rel="stylesheet" href="/css/courses/cards.css" />
+<link rel="stylesheet" href="/css/courses/Curso_de_Comunicacion_Efectiva.css" />
 
 <!-- Preguntar si el usuario quiere guardar este curso -->
 <!-- Modal -->

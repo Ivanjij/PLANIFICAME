@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="form-box login">
-        <form action="auth/login.php" method="POST">
+        <form action="/auth/login.php" method="POST">
             <h1>Inicio de Sesion</h1>
             <div class="input-box">
                 <input type="email" name="email" placeholder="Correo electrónico" required />
@@ -30,7 +30,7 @@
     </div>
 
     <div class="form-box register">
-        <form action="auth/registro.php" method="POST">
+        <form action="/auth/registro.php" method="POST">
             <h1>Registro</h1>
             <div class="input-box">
                 <input type="text" name="nombre_completo" placeholder="Nombre completo" required />

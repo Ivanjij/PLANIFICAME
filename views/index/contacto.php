@@ -1,9 +1,9 @@
 <?php
-require_once 'includes/navbar.php';  // Subir dos niveles para llegar a la carpeta 'includes'
+require_once '/includes/navbar.php';  // Subir dos niveles para llegar a la carpeta 'includes'
 ?>
 
-<link rel="stylesheet" href="css/contacto.css" />
-<link rel="stylesheet" href="css/particles.css" />
+<link rel="stylesheet" href="/css/contacto.css" />
+<link rel="stylesheet" href="/css/particles.css" />
 
 <!-- Sección de Contacto -->
 <section class="intro">
@@ -48,8 +48,8 @@ require_once 'includes/navbar.php';  // Subir dos niveles para llegar a la carpe
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
-<script src="js/particles.js"></script>
+<script src="/js/particles.js"></script>
 
 <?php
-require_once 'includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
+require_once '/includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
 ?>
