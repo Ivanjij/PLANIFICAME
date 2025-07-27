@@ -1,19 +1,21 @@
-
-// Función para mostrar u ocultar el dropdown al hacer clic
-document.querySelector('.user-menu a').addEventListener('click', function (e) {
-    e.preventDefault();
-    const dropdown = this.nextElementSibling;
-
-    // Verificar si el dropdown está visible
-    if (dropdown.style.display === 'block') {
-        dropdown.style.display = 'none';
-    } else {
-        dropdown.style.display = 'block';
-    }
-});
-
-// Función para el Slider
 document.addEventListener("DOMContentLoaded", function () {
+    const userMenuLink = document.querySelector('.user-menu a');
+    const dropdown = userMenuLink ? userMenuLink.nextElementSibling : null;
+
+    if (userMenuLink && dropdown) {
+        userMenuLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        });
+
+        // Cierra el dropdown si se hace clic fuera
+        document.addEventListener('click', function (e) {
+            if (!userMenuLink.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+    }
+
     const toggleBtn = document.getElementById("sidebar-toggle");
     const sidebar = document.getElementById("user-sidebar");
 
@@ -21,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleBtn.addEventListener("click", () => {
             sidebar.classList.toggle("collapsed");
 
-            // Cambia dirección de la flecha decorativa
             const arrowIcon = sidebar.querySelector(".sidebar-arrow i");
             if (arrowIcon) {
                 arrowIcon.classList.toggle("fa-chevron-left");
@@ -30,4 +31,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-
