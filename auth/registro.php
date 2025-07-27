@@ -1,28 +1,27 @@
 <?php
 include('../config/db.php'); // Incluir la conexión a la base de datos
 
-// Si se ha enviado el formulario de registro
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener los valores del formulario
     $nombre_completo = $_POST['nombre_completo'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Validar los campos
     if (!empty($nombre_completo) && !empty($email) && !empty($password)) {
-        // Encriptar la contraseña antes de guardarla
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        // Insertar los datos en la base de datos
+        // ¡Nunca interpolar directamente datos en SQL! Escapamos con pg_escape_string por seguridad mínima
+        $nombre_completo = pg_escape_string($conn, $nombre_completo);
+        $email = pg_escape_string($conn, $email);
+        $hashed_password = pg_escape_string($conn, $hashed_password);
+
         $sql = "INSERT INTO users (nombre_completo, email, password) VALUES ('$nombre_completo', '$email', '$hashed_password')";
 
         $result = pg_query($conn, $sql);
         if ($result) {
-            // Redirigir a la página de login con el mensaje de éxito
             header("Location: /views/login/register.php?registro=exitoso");
-            exit(); // Asegura que el script se detenga aquí
+            exit();
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error en la consulta: " . pg_last_error($conn);
         }
     } else {
         echo "Por favor complete todos los campos.";
