@@ -78,4 +78,4 @@ if (isset($_GET['registro']) && $_GET['registro'] == 'exitoso') {
 
 
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-<script src="js/register.js"></script>
+<script src="/js/register.js"></script>
