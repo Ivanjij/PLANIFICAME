@@ -11,6 +11,6 @@ class indexController
     // Método para renderizar el initiation
     public function renderInitiation()
     {
-        include_once '/views/index/initiation.php';
+        include_once 'views/index/initiation.php';
     }
 }
