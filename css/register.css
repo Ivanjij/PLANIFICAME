@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'excelates';
-    src: url('http://localhost/PLANIFICAME/fonts/excelate/excelates.ttf') format('truetype');
+    src: url('fonts/excelate/excelates.ttf') format('truetype');
 }
 
 * {
