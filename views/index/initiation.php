@@ -158,7 +158,7 @@ if (isset($_GET['login']) && $_GET['login'] == 'exitoso') {
     <div class="footer-container">
         <!-- Logo -->
         <div class="footer-logo">
-            <img src="logo.png" alt="Logo" class="footer-logo-img">
+        <!--    <img src="logo.png" alt="Logo" class="footer-logo-img">  -->
         </div>
         
         <!-- Enlaces -->
