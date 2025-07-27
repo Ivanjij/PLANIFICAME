@@ -1,5 +1,5 @@
 <?php
-include('/config/db.php'); // Incluir la conexión a la base de datos
+include('../config/db.php'); // Incluir la conexión a la base de datos
 
 // Si se ha enviado el formulario de inicio de sesión
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
