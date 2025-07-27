@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <title>PLANIFICAME</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="http://localhost/PLANIFICAME/css/navbar.css">
-    <link rel="stylesheet" href="http://localhost/PLANIFICAME/css/index.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
@@ -19,11 +19,11 @@
 
     <div class="nav-center">
     <ul class="nav-links">
-        <li><a href="http://localhost/PLANIFICAME/index.php">INICIO</a></li>
+        <li><a href="index.php">INICIO</a></li>
         <li class="separator">|</li>
-        <li><a href="http://localhost/PLANIFICAME/views/index/nosotros.php">NOSOTROS</a></li>
+        <li><a href="views/index/nosotros.php">NOSOTROS</a></li>
         <li class="separator">|</li>
-        <li><a href="http://localhost/PLANIFICAME/views/index/contacto.php">CONTACTO</a></li>
+        <li><a href="views/index/contacto.php">CONTACTO</a></li>
     </ul>
 </div>
 
@@ -33,11 +33,11 @@
             <li class="user-menu">
                 <a href="#"><i class="fas fa-robot"></i> <?php echo $_SESSION['user_name']; ?></a>
                 <ul class="dropdown">
-                    <li><a href="http://localhost/PLANIFICAME/auth/logout.php">Cerrar sesión</a></li>
+                    <li><a href="auth/logout.php">Cerrar sesión</a></li>
                 </ul>
             </li>
         <?php else: ?>
-            <li><a href="http://localhost/PLANIFICAME/views/login/register.php"><i class="fas fa-user"></i> INICIAR SESION</a></li>
+            <li><a href="views/login/register.php"><i class="fas fa-user"></i> INICIAR SESION</a></li>
         <?php endif; ?>
     </ul>
 </div>
@@ -55,16 +55,16 @@
             <i class="fas fa-chevron-left"></i>
         </div>
         <ul>
-            <li><a href="http://localhost/PLANIFICAME/views/index/chatbotAI.php">
+            <li><a href="views/index/chatbotAI.php">
                 <i class="fas fa-robot"></i> <span class="link-text">ChatBot</span></a>
             </li>
-            <li><a href="http://localhost/PLANIFICAME/views/index/mejoraProfesional.php">
+            <li><a href="views/index/mejoraProfesional.php">
                 <i class="fas fa-chart-line"></i> <span class="link-text">Cursos</span></a>
             </li>
         </ul>
     </div>
 <?php endif; ?>
 
-<script src="http://localhost/PLANIFICAME/js/navbar.js"></script>
+<script src="js/navbar.js"></script>
 </body>
 </html>

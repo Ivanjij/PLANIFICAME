@@ -1,6 +1,6 @@
 
-    <link rel="stylesheet" href="http://localhost/PLANIFICAME/css/footer.css"> <!-- Aquí incluye tu archivo de estilos -->
-    <link rel="stylesheet" href="http://localhost/PLANIFICAME/css/index.css">
+    <link rel="stylesheet" href="css/footer.css"> <!-- Aquí incluye tu archivo de estilos -->
+    <link rel="stylesheet" href="css/index.css">
 
     <!-- Contenido principal de la página -->
 
