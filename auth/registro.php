@@ -16,7 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insertar los datos en la base de datos
         $sql = "INSERT INTO users (nombre_completo, email, password) VALUES ('$nombre_completo', '$email', '$hashed_password')";
 
-        if ($conn->query($sql) === TRUE) {
+        $result = pg_query($conn, $sql);
+        if ($result) {
             // Redirigir a la página de login con el mensaje de éxito
             header("Location: /views/login/register.php?registro=exitoso");
             exit(); // Asegura que el script se detenga aquí

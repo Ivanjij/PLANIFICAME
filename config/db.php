@@ -5,9 +5,9 @@ $password = "VVDJJEtEe1rs3KR9dn1I6Hhj4MmsiYWc"; // La contraseña de MySQL (si l
 $dbname = "planificame_db"; // El nombre de la base de datos
 
 // Crear conexión
-$conn = new mysqli($host, $user, $password, $dbname);
+$conn = pg_connect("host=$host db_name=$dbname user=$user password=$password");
 
 // Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+if (!$conn) {
+    die("Conexión fallida con la base de datos.");
 }
