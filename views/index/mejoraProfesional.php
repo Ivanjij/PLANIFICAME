@@ -1,5 +1,5 @@
 <?php
-require_once '../../includes/navbar.php';  // Subir dos niveles para llegar a la carpeta 'includes'
+require_once 'includes/navbar.php';  // Subir dos niveles para llegar a la carpeta 'includes'
 
 $courseFile = $_GET['course'] ?? '';  // Obtener el curso seleccionado
 
@@ -15,7 +15,7 @@ if ($courseFile) {
     }
 
     // Ahora construimos la URL correctamente
-    $coursePath = "../../views/courses/" . rtrim($courseType, '/') . "/" . ltrim($courseFile, '/') . ".php"; // Ruta correcta para el curso
+    $coursePath = "views/courses/" . rtrim($courseType, '/') . "/" . ltrim($courseFile, '/') . ".php"; // Ruta correcta para el curso
 
     if (file_exists($coursePath)) {
         $courseTitle = ucfirst(str_replace('habilidadesBlandas', 'Habilidades Blandas', str_replace('habilidadesTecnicas', 'Habilidades Técnicas', basename($courseFile, '.php'))));
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_course'])) {
     $courseUrl = $_POST['course_url'];  // El URL del curso recomendado
 
     // Conexión a la base de datos
-    include('../../config/db.php');  // Asegúrate de incluir la ruta correcta
+    include('config/db.php');  // Asegúrate de incluir la ruta correcta
 
     // Obtener el ID del curso seleccionado
     $stmt = $conn->prepare("SELECT id FROM courses WHERE course_name = ? AND course_url = ? AND category_id = (SELECT id FROM categories WHERE category_name = ? LIMIT 1)");
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_course'])) {
     $courseId = $_POST['course_id'];  // El ID del curso a eliminar
 
     // Conexión a la base de datos
-    include('../../config/db.php');  // Asegúrate de incluir la ruta correcta
+    include('config/db.php');  // Asegúrate de incluir la ruta correcta
 
     // Eliminar el curso de la base de datos
     $stmt = $conn->prepare("DELETE FROM user_courses WHERE course_id = ? AND user_id = ?");
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_course'])) {
 }
 ?>
 
-<link rel="stylesheet" href="http://localhost/PLANIFICAME/css/mejoraProfesional.css" />
+<link rel="stylesheet" href="css/mejoraProfesional.css" />
 
 <!-- Contenido principal -->
 <section class="user-progress">
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_course'])) {
         <div class="courses-container">
             <?php
             // Obtener los cursos guardados por el usuario
-            include('../../config/db.php');  // Asegúrate de incluir la ruta correcta
+            include('config/db.php');  // Asegúrate de incluir la ruta correcta
 
             $userId = $_SESSION['user_id'];  // Asegúrate de que el ID del usuario esté en la sesión
             $sql = "SELECT * FROM user_courses 
@@ -175,5 +175,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_course'])) {
 </section>
 
 <?php
-require_once '../../includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
+require_once 'includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
 ?>

@@ -7,8 +7,8 @@ if (isset($_GET['login']) && $_GET['login'] == 'exitoso') {
 
 <!-- Link a Font Awesome para los íconos -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="http://localhost/PLANIFICAME/css/initiation.css">
-    <link rel="stylesheet" href="http://localhost/PLANIFICAME/css/footer.css"> <!-- Aquí incluye tu archivo de estilos -->
+<link rel="stylesheet" href="css/initiation.css">
+    <link rel="stylesheet" href="css/footer.css"> <!-- Aquí incluye tu archivo de estilos -->
 
 <!-- Link a un carousel moderno -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@6.4.5/swiper-bundle.min.css">
@@ -26,7 +26,7 @@ if (isset($_GET['login']) && $_GET['login'] == 'exitoso') {
   </div>
 
   <div class="hero-image-wrapper">
-    <img src="http://localhost/PLANIFICAME/images/index/IA.svg"
+    <img src="images/index/IA.svg"
          alt="Imagen IA"
          class="hero-image init-animate show"
          id="heroImage">
@@ -190,4 +190,4 @@ if (isset($_GET['login']) && $_GET['login'] == 'exitoso') {
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@6.4.5/swiper-bundle.min.js"></script>
-<script src="http://localhost/PLANIFICAME/js/initiation.js"></script>
+<script src="js/initiation.js"></script>

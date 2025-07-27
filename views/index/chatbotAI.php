@@ -1,9 +1,9 @@
 <?php
-require_once '../../includes/navbar.php';  // Ajusta la ruta si es necesario
+require_once 'includes/navbar.php';  // Ajusta la ruta si es necesario
 ?>
 
-<link rel="stylesheet" href="http://localhost/PLANIFICAME/css/chatbot.css" />
-<link rel="stylesheet" href="http://localhost/PLANIFICAME/css/particles.css" />
+<link rel="stylesheet" href="css/chatbot.css" />
+<link rel="stylesheet" href="css/particles.css" />
 
 <!-- Sección de Chat con la IA -->
 <section class="chatbot-container">
@@ -34,7 +34,7 @@ document.getElementById('send-message').addEventListener('click', () => {
     input.value = "";
     history.scrollTop = history.scrollHeight;
 
-    fetch('http://localhost/PLANIFICAME/IA/chatbot.php', {
+    fetch('IA/chatbot.php', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({message: text})
@@ -54,8 +54,8 @@ document.getElementById('send-message').addEventListener('click', () => {
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
-<script src="http://localhost/PLANIFICAME/js/particles.js"></script>
+<script src="js/particles.js"></script>
 
 <?php
-require_once '../../includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
+require_once 'includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
 ?>
