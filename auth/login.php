@@ -1,5 +1,5 @@
 <?php
-include('../config/db.php'); // Incluir la conexión a la base de datos
+include('config/db.php'); // Incluir la conexión a la base de datos
 
 // Si se ha enviado el formulario de inicio de sesión
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['user_name'] = $user['nombre_completo'];
                 
                 // Redirigir con mensaje de inicio de sesión exitoso
-                header("Location: http://localhost/PLANIFICAME/index.php?login=exitoso");
+                header("index.php?login=exitoso");
                 exit(); // Asegura que el script se detenga aquí
             } else {
                 // Contraseña incorrecta

@@ -28,7 +28,7 @@ window.onload = function () {
 
             // Crear IA3.svg
             const newImage = document.createElement('img');
-            newImage.src = 'http://localhost/PLANIFICAME/images/index/IA3.svg';
+            newImage.src = 'images/index/IA3.svg';
             newImage.alt = 'Imagen IA 3';
             newImage.classList.add('hero-image');
             newImage.id = 'heroImageNew';

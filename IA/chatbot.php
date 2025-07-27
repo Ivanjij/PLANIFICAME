@@ -134,7 +134,7 @@ como débiles. Dentro puedes hacer clic en los enlaces para ver videos educativo
 mejorar en esas áreas.
 
 **Enlace a la Ruta de Aprendizaje**:  
-[Ver Ruta de Aprendizaje Completa (Video y Recursos)](http://localhost/PLANIFICAME/ruta-aprendizaje.php)
+[Ver Ruta de Aprendizaje Completa (Video y Recursos)](ruta-aprendizaje.php)
 
 ---
 
@@ -162,14 +162,14 @@ mejorar en esas áreas.
     <ul>
         <li><b>Habilidades Blandas</b>:<br>
             <ul>
-                <li><a href='http://localhost/PLANIFICAME/views/courses/habilidadesBlandas/Comunicaci%C3%B3n%20efectiva.Php' target='_blank'><b>Curso de Comunicación Efectiva</b></a></li>
-                <li><a href='http://localhost/PLANIFICAME/views/courses/habilidadesBlandas/Gesti%C3%B3n%20del%20tiempo.Php' target='_blank'><b>Curso de Gestión del Tiempo</b></a></li>
+                <li><a href='views/courses/habilidadesBlandas/Comunicaci%C3%B3n%20efectiva.Php' target='_blank'><b>Curso de Comunicación Efectiva</b></a></li>
+                <li><a href='views/courses/habilidadesBlandas/Gesti%C3%B3n%20del%20tiempo.Php' target='_blank'><b>Curso de Gestión del Tiempo</b></a></li>
             </ul>
         </li>
         <li><b>Habilidades Técnicas</b>:<br>
             <ul>
-                <li><a href='http://localhost/PLANIFICAME/views/courses/habilidadesTecnicas/Optimización%20de%20Consultas.Php' target='_blank'><b>Curso de Optimización de Consultas SQL</b></a></li>
-                <li><a href='http://localhost/PLANIFICAME/views/courses/habilidadesTecnicas/Desarrollo%20Web%20con%20React.Php' target='_blank'><b>Curso de Desarrollo Web con React</b></a></li>
+                <li><a href='views/courses/habilidadesTecnicas/Optimización%20de%20Consultas.Php' target='_blank'><b>Curso de Optimización de Consultas SQL</b></a></li>
+                <li><a href='views/courses/habilidadesTecnicas/Desarrollo%20Web%20con%20React.Php' target='_blank'><b>Curso de Desarrollo Web con React</b></a></li>
             </ul>
         </li>
     </ul><br>
@@ -181,7 +181,7 @@ mejorar en esas áreas.
     <ul>
         <li><b>Videos Educativos</b>:<br>
             <ul>
-                <li><a href='http://localhost/PLANIFICAME/ruta-aprendizaje.php' target='_blank'><b>Ruta de Aprendizaje</b></a></li>
+                <li><a href='ruta-aprendizaje.php' target='_blank'><b>Ruta de Aprendizaje</b></a></li>
             </ul>
         </li>
     </ul><br>

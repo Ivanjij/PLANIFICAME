@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="http://localhost/PLANIFICAME/css/register.css" />
+<link rel="stylesheet" href="css/register.css" />
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
 <canvas id="particle-canvas"></canvas>
 
 <div class="container">
     <div class="form-box login">
-        <form action="../../auth/login.php" method="POST">
+        <form action="auth/login.php" method="POST">
             <h1>Inicio de Sesion</h1>
             <div class="input-box">
                 <input type="email" name="email" placeholder="Correo electrónico" required />
@@ -30,7 +30,7 @@
     </div>
 
     <div class="form-box register">
-        <form action="../../auth/registro.php" method="POST">
+        <form action="auth/registro.php" method="POST">
             <h1>Registro</h1>
             <div class="input-box">
                 <input type="text" name="nombre_completo" placeholder="Nombre completo" required />
@@ -78,4 +78,4 @@ if (isset($_GET['registro']) && $_GET['registro'] == 'exitoso') {
 
 
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-<script src="http://localhost/PLANIFICAME/js/register.js"></script>
+<script src="js/register.js"></script>
