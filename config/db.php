@@ -14,7 +14,7 @@ mysqli_ssl_set($conn, NULL, NULL, $ssl_ca, NULL, NULL);
 mysqli_real_connect($conn, $host, $user, $password, $dbname, $port, NULL, MYSQLI_CLIENT_SSL);
 
 // Verificar la conexión
-if (mysqli_connect_errno($conn)) {
+if (mysqli_connect_error($conn)) {
     die("Conexión fallida: " . mysqli_connect_error());
 } else {
     echo "¡Conexión exitosa a MySQL en Aiven!";
