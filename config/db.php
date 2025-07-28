@@ -6,7 +6,7 @@ $dbname = "defaultdb"; // Por defecto en Aiven es defaultdb
 $port = 13784; // Puerto típico de Aiven MySQL
 
 // Ruta al certificado SSL
-$ssl_ca = __DIR__ . "/config/ssl/ca.pem";
+$ssl_ca = __DIR__ . "/ssl/ca.pem";
 
 // Crear conexión mysqli con SSL
 $conn = mysqli_init();
