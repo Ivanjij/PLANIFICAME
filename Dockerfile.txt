@@ -3,19 +3,19 @@ FROM php:8.2-apache
 # Instala dependencias necesarias
 RUN apt-get update && apt-get install -y \
     libgmp-dev \
-    libsqlite3-dev \
     libzip-dev \
     zip \
     unzip \
     libonig-dev \
     libxml2-dev \
-    libpq-dev \
+    libpng-dev \
     && docker-php-ext-install \
         bcmath \
         gmp \
+        mysqli \
         pdo \
-        pdo_sqlite \
-        pdo_pgsql
+        pdo_mysql \
+        zip
 
 # Habilita mod_rewrite para Apache
 RUN a2enmod rewrite
