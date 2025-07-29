@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 session_start();
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['nombre_completo'];
-                
+
                 // Redirigir con mensaje de inicio de sesión exitoso
                 header("/index.php?login=exitoso");
                 exit(); // Asegura que el script se detenga aquí
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
     } else {
-        echo "Por favor complete todos los campos.";
+        header("Location: /auth/login.php?login=fallido&error=empty_fields");
+        exit();
     }
 }
-?>
