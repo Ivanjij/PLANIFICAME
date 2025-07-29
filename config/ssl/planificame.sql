@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `category_name` varchar(255) NOT NULL,
   `description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -48,7 +48,7 @@ INSERT INTO `categories` (`id`, `category_name`, `description`) VALUES
 --
 
 CREATE TABLE `courses` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `course_name` varchar(255) NOT NULL,
   `course_url` varchar(255) NOT NULL,
   `category_id` int(11) NOT NULL
@@ -106,7 +106,7 @@ CREATE TABLE `password_resets` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `nombre_completo` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -127,7 +127,7 @@ INSERT INTO `users` (`id`, `nombre_completo`, `email`, `password`, `fecha_regist
 --
 
 CREATE TABLE `user_courses` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `user_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT current_timestamp()
@@ -148,7 +148,7 @@ INSERT INTO `user_courses` (`id`, `user_id`, `course_id`, `date_added`) VALUES
 --
 
 CREATE TABLE `user_course_progress` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `user_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
   `progress` int(3) NOT NULL,
