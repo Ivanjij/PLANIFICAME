@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['user_name'] = $user['nombre_completo'];
 
                 // Redirigir con mensaje de inicio de sesión exitoso
-                header("/index.php?login=exitoso");
+                header("Location: /index.php?login=exitoso");
                 exit(); // Asegura que el script se detenga aquí
             } else {
                 // Contraseña incorrecta
