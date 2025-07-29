@@ -15,7 +15,7 @@ if ($courseFile) {
     }
 
     // Ahora construimos la URL correctamente
-    $coursePath = "/views/courses/" . rtrim($courseType, '/') . "/" . ltrim($courseFile, '/') . ".php"; // Ruta correcta para el curso
+    $coursePath = "../../views/courses/" . rtrim($courseType, '/') . "/" . ltrim($courseFile, '/') . ".php"; // Ruta correcta para el curso
 
     if (file_exists($coursePath)) {
         $courseTitle = ucfirst(str_replace('habilidadesBlandas', 'Habilidades Blandas', str_replace('habilidadesTecnicas', 'Habilidades Técnicas', basename($courseFile, '.php'))));
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_course'])) {
     $courseId = $_POST['course_id'];  // El ID del curso a eliminar
 
     // Conexión a la base de datos
-    include('/config/db.php');  // Asegúrate de incluir la ruta correcta
+    include('../../config/db.php');  // Asegúrate de incluir la ruta correcta
 
     // Eliminar el curso de la base de datos
     $stmt = $conn->prepare("DELETE FROM user_courses WHERE course_id = ? AND user_id = ?");
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_course'])) {
 }
 ?>
 
-<link rel="stylesheet" href="/css/mejoraProfesional.css" />
+<link rel="stylesheet" href="../../css/mejoraProfesional.css" />
 
 <!-- Contenido principal -->
 <section class="user-progress">
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_course'])) {
         <div class="courses-container">
             <?php
             // Obtener los cursos guardados por el usuario
-            include('/config/db.php');  // Asegúrate de incluir la ruta correcta
+            include('../../config/db.php');  // Asegúrate de incluir la ruta correcta
 
             $userId = $_SESSION['user_id'];  // Asegúrate de que el ID del usuario esté en la sesión
             $sql = "SELECT * FROM user_courses 

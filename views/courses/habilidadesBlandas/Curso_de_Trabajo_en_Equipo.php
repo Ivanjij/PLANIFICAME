@@ -1,5 +1,5 @@
 <?php
-require_once '/includes/navbar.php'; // Subir dos niveles para llegar a la carpeta 'includes'
+require_once '../../includes/navbar.php'; // Subir dos niveles para llegar a la carpeta 'includes'
 
 // Establecer el nombre y la URL del curso
 $courseTitle = "Curso de Trabajo en Equipo";
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save_course'])) {
     $courseUrl = $_POST['course_url'];  // El URL del curso recomendado
 
     // Conexión a la base de datos
-    include('/config/db.php');  // Asegúrate de incluir la ruta correcta
+    include('../../config/db.php');  // Asegúrate de incluir la ruta correcta
 
     // Obtener el ID del curso seleccionado
     $stmt = $conn->prepare("SELECT id FROM courses WHERE course_name = ? AND course_url = ?");

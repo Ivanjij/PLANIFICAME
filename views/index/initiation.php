@@ -7,8 +7,8 @@ if (isset($_GET['login']) && $_GET['login'] == 'exitoso') {
 
 <!-- Link a Font Awesome para los íconos -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="/css/initiation.css">
-    <link rel="stylesheet" href="/css/footer.css"> <!-- Aquí incluye tu archivo de estilos -->
+<link rel="stylesheet" href="../../css/initiation.css">
+    <link rel="stylesheet" href="../../css/footer.css"> <!-- Aquí incluye tu archivo de estilos -->
 
 <!-- Link a un carousel moderno -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@6.4.5/swiper-bundle.min.css">
