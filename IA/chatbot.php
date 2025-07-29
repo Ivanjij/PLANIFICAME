@@ -162,14 +162,14 @@ mejorar en esas áreas.
     <ul>
         <li><b>Habilidades Blandas</b>:<br>
             <ul>
-                <li><a href='/views/courses/habilidadesBlandas/Comunicaci%C3%B3n%20efectiva.Php' target='_blank'><b>Curso de Comunicación Efectiva</b></a></li>
-                <li><a href='/views/courses/habilidadesBlandas/Gesti%C3%B3n%20del%20tiempo.Php' target='_blank'><b>Curso de Gestión del Tiempo</b></a></li>
+                <li><a href='/views/courses/habilidadesBlandas/Comunicaci%C3%B3n_efectiva.Php' target='_blank'><b>Curso de Comunicación Efectiva</b></a></li>
+                <li><a href='/views/courses/habilidadesBlandas/Gesti%C3%B3n_del_tiempo.Php' target='_blank'><b>Curso de Gestión del Tiempo</b></a></li>
             </ul>
         </li>
         <li><b>Habilidades Técnicas</b>:<br>
             <ul>
-                <li><a href='/views/courses/habilidadesTecnicas/Optimización%20de%20Consultas.Php' target='_blank'><b>Curso de Optimización de Consultas SQL</b></a></li>
-                <li><a href='/views/courses/habilidadesTecnicas/Desarrollo%20Web%20con%20React.Php' target='_blank'><b>Curso de Desarrollo Web con React</b></a></li>
+                <li><a href='/views/courses/habilidadesTecnicas/Optimización_de_Consultas.Php' target='_blank'><b>Curso de Optimización de Consultas SQL</b></a></li>
+                <li><a href='/views/courses/habilidadesTecnicas/Desarrollo_Web_con_React.Php' target='_blank'><b>Curso de Desarrollo Web con React</b></a></li>
             </ul>
         </li>
     </ul><br>
