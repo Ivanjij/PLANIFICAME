@@ -94,6 +94,7 @@ INSERT INTO `courses` (`id`, `course_name`, `course_url`, `category_id`) VALUES
 --
 
 CREATE TABLE `password_resets` (
+  `id` int(3) NOT NULL PRIMARY KEY,
   `email` varchar(255) NOT NULL,
   `token` varchar(255) NOT NULL,
   `date_requested` timestamp NOT NULL DEFAULT current_timestamp()
