@@ -30,10 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 // Contraseña incorrecta
                 header("Location: /login.php?login=fallido");
+                exit();
             }
         } else {
             // Usuario no encontrado
             header("Location: /login.php?login=fallido");
+            exit();
         }
     } else {
         echo "Por favor complete todos los campos.";
