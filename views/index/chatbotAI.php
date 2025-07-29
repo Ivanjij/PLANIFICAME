@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/navbar.php';  // Ajusta la ruta si es necesario
+require_once '../../includes/navbar.php';  // Ajusta la ruta si es necesario
 ?>
 
 <link rel="stylesheet" href="/css/chatbot.css" />
@@ -54,8 +54,8 @@ document.getElementById('send-message').addEventListener('click', () => {
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
-<script src="/js/particles.js"></script>
+<script src="../../js/particles.js"></script>
 
 <?php
-require_once 'includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
+require_once '../../includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
 ?>
