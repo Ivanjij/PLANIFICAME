@@ -1,5 +1,5 @@
 <?php
-include('../config/db.php'); // Incluir la conexión a la base de datos
+include('/var/www/html/config/db.php'); // Incluir la conexión a la base de datos
 
 // Si se ha enviado el formulario de registro
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($conn->query($sql) === TRUE) {
             // Redirigir a la página de login con el mensaje de éxito
-            header("Location: ../views/login/register.php?registro=exitoso");
+            header("Location: /var/www/html/views/login/register.php?registro=exitoso");
             exit(); // Asegura que el script se detenga aquí
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
