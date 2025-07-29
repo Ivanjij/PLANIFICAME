@@ -75,7 +75,5 @@ if (isset($_GET['registro']) && $_GET['registro'] == 'exitoso') {
     echo '<div class="notification">Registro exitoso</div>';
 }
 ?>
-
-
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 <script src="/js/register.js"></script>

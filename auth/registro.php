@@ -21,9 +21,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: /views/login/register.php?registro=exitoso");
             exit(); // Asegura que el script se detenga aquí
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            header("Location: /index.php?error=database_no_connection");
+            exit();
         }
     } else {
-        echo "Por favor complete todos los campos.";
+        header("Location: /auth/login.php?login=fallido&error=empty_fields");
+        exit();
     }
 }
