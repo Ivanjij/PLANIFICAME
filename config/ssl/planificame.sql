@@ -161,30 +161,21 @@ CREATE TABLE `user_course_progress` (
 --
 
 --
--- Indices de la tabla `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `courses`
 --
 ALTER TABLE `courses`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `category_id` (`category_id`);
 
 --
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indices de la tabla `user_courses`
 --
 ALTER TABLE `user_courses`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `course_id` (`course_id`);
 
@@ -192,7 +183,6 @@ ALTER TABLE `user_courses`
 -- Indices de la tabla `user_course_progress`
 --
 ALTER TABLE `user_course_progress`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `course_id` (`course_id`);
 
