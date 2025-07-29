@@ -30,7 +30,7 @@
     </div>
 
     <div class="form-box register">
-        <form action="/auth/registro.php" method="POST">
+        <form action="/var/www/html/auth/registro.php" method="POST">
             <h1>Registro</h1>
             <div class="input-box">
                 <input type="text" name="nombre_completo" placeholder="Nombre completo" required />
