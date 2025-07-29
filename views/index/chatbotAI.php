@@ -1,5 +1,5 @@
 <?php
-require_once '/includes/navbar.php';  // Ajusta la ruta si es necesario
+require_once 'includes/navbar.php';  // Ajusta la ruta si es necesario
 ?>
 
 <link rel="stylesheet" href="/css/chatbot.css" />
