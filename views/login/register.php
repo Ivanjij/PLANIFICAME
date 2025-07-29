@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/register.css" />
+<link rel="stylesheet" href="/var/www/html/css/register.css" />
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
 <canvas id="particle-canvas"></canvas>
