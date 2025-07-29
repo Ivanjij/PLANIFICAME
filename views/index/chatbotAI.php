@@ -57,5 +57,5 @@ document.getElementById('send-message').addEventListener('click', () => {
 <script src="/js/particles.js"></script>
 
 <?php
-require_once '/includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
+require_once 'includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
 ?>
