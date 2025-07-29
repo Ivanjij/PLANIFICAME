@@ -1,5 +1,5 @@
 <?php
-require_once '/includes/navbar.php';  // Subir dos niveles para llegar a la carpeta 'includes'
+require_once '../../includes/navbar.php';  // Subir dos niveles para llegar a la carpeta 'includes'
 ?>
 
 <link rel="stylesheet" href="/css/contacto.css" />
@@ -51,5 +51,5 @@ require_once '/includes/navbar.php';  // Subir dos niveles para llegar a la carp
 <script src="/js/particles.js"></script>
 
 <?php
-require_once '/includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
+require_once '../../includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
 ?>

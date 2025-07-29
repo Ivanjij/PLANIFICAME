@@ -1,5 +1,5 @@
 <?php
-require_once '/includes/navbar.php';  // Subir dos niveles para llegar a la carpeta 'includes'
+require_once '../../includes/navbar.php';  // Subir dos niveles para llegar a la carpeta 'includes'
 
 $courseFile = $_GET['course'] ?? '';  // Obtener el curso seleccionado
 
@@ -175,5 +175,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_course'])) {
 </section>
 
 <?php
-require_once '/includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
+require_once '../../includes/footer.php';  // Subir dos niveles para llegar a la carpeta 'includes'
 ?>
