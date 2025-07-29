@@ -146,8 +146,8 @@ if (isset($_GET['login']) && $_GET['login'] == 'exitoso') {
         <p>Únete ahora a nuestra plataforma y empieza a potenciar tu carrera con la ayuda de nuestra IA.</p>
     </div>
     <div class="auth-buttons">
-        <a href="/registro.php" class="cta-btn">Regístrate</a>
-        <a href="/iniciar_sesion.php" class="cta-btn">Iniciar Sesión</a>
+        <a href="/views/login/register.php" class="cta-btn">Regístrate</a>
+        <a href="/views/login/register.php" class="cta-btn">Iniciar Sesión</a>
     </div>
 </section>
 
